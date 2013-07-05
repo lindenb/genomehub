@@ -4,3 +4,5 @@ jeter*
 *.class
 .classpath
 .project
+bin
+tmp

@@ -2,13 +2,17 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://github.com/lindenb/genomehub"
 	xmlns:tns="http://github.com/lindenb/genomehub"
-	elementFormDefault="qualified"
+	elementFormDefault="unqualified"
 	>
 
 <complexType name="GenomeHub">
 <sequence>
 	<element name="genome" type="tns:Genome" minOccurs="1" maxOccurs="unbounded"/>
 </sequence>
+<attribute name="id" type="token" use="optional" default="genomehub"/>
+<attribute name="name" type="string" use="optional" default="genomehub"/>
+<attribute name="description" type="string" use="optional" default="Genome Hub"/>
+<attribute name="email" type="string" use="optional" default="nobody@nowhere.com"/>
 </complexType>
 
 
@@ -20,6 +24,7 @@
 	<element name="scientificName" type="string" minOccurs="0"/>
 	<element name="fasta" type="normalizedString" minOccurs="1" maxOccurs="1"/>
 	<element name="protein" type="tns:Protein"  minOccurs="0"  maxOccurs="unbounded"/>
+	<element name="dna" type="tns:Nucleotide"  minOccurs="0"  maxOccurs="unbounded"/>
 </sequence>
 <attribute name="id" type="token"/>
 </complexType>
@@ -40,5 +45,15 @@
       </extension>
     </simpleContent>
 </complexType>
+
+<complexType name="Nucleotide">
+    <simpleContent>
+      <extension base="token">
+      </extension>
+    </simpleContent>
+</complexType>
+
+
+<element name="genomeHub" type="tns:GenomeHub"/>
 
 </schema>

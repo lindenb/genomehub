@@ -1,1 +1,4 @@
-XJCPROXY=-httpproxy cache.ha.univ-nantes.fr:3128
+PROXYHOST=proxy-upgrade.univ-nantes.prive
+PROXYPORT=3128
+XJCPROXY=-httpproxy ${PROXYHOST}:${PROXYPORT}
+CURLPROXY= --proxy ${PROXYHOST}:${PROXYPORT}

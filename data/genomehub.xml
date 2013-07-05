@@ -6,7 +6,7 @@
     <organism>organism</organism>
     <defaultPos>defaultPos</defaultPos>
     <scientificName>scientificName</scientificName>
-    <fasta>rotavirus/rf/reference.fa</fasta>
+    <fasta>rotavirus/rf/rf.fa</fasta>
     <protein dna="token" type="ncbi">token</protein>
   </genome>
   
