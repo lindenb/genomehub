@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genomeHub >
+  
+  <genome id="rf11">
+    <description>Rotavirus RF11</description>
+    <organism>organism</organism>
+    <defaultPos>defaultPos</defaultPos>
+    <scientificName>scientificName</scientificName>
+    <fasta>rotavirus/rf/reference.fa</fasta>
+    <protein dna="token" type="ncbi">token</protein>
+  </genome>
+  
+</genomeHub>
