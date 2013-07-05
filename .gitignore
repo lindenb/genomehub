@@ -1,0 +1,6 @@
+src/main/generated-sources
+*~
+jeter*
+*.class
+.classpath
+.project

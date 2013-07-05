@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://github.com/lindenb/genomehub"
+	xmlns:tns="http://github.com/lindenb/genomehub"
+	elementFormDefault="qualified"
+	>
+
+<complexType name="GenomeHub">
+<sequence>
+	<element name="genome" type="tns:Genome" minOccurs="1" maxOccurs="unbounded"/>
+</sequence>
+</complexType>
+
+
+<complexType name="Genome">
+<sequence>
+	<element name="description" type="string" minOccurs="0"/>
+	<element name="organism" type="string" minOccurs="0"/>
+	<element name="defaultPos" type="string" minOccurs="0"/>
+	<element name="scientificName" type="string" minOccurs="0"/>
+	<element name="fasta" type="normalizedString" minOccurs="1" maxOccurs="1"/>
+	<element name="protein" type="tns:Protein"  minOccurs="0"  maxOccurs="unbounded"/>
+</sequence>
+<attribute name="id" type="token"/>
+</complexType>
+
+<simpleType name="db">
+  <restriction base="string">
+    <enumeration value="ncbi" />
+    <enumeration value="uniprot" />
+  </restriction>
+</simpleType>
+
+
+<complexType name="Protein">
+    <simpleContent>
+      <extension base="token">
+        <attribute name="type" type="tns:db" use="optional"/>
+        <attribute name="dna" type="token" use="optional"/>
+      </extension>
+    </simpleContent>
+</complexType>
+
+</schema>
