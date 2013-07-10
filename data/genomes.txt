@@ -1,0 +1,7 @@
+genome	rf11
+trackDb	rotavirus/rf/trackDb.txt
+twoBitPath	rotavirus/rf/rf.2bit
+description Rotavirus RF11
+defaultPos RF01:1-10
+scientificName Rotavirus
+

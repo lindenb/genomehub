@@ -1,0 +1,168 @@
+track active_site
+bigDataUrl	active_site.bb 
+shortLabel	active site
+longLabel	active site
+type	bigBed
+
+track calcium-binding_region
+bigDataUrl	calcium-binding_region.bb 
+shortLabel	calcium-binding region
+longLabel	calcium-binding region
+type	bigBed
+
+track chain
+bigDataUrl	chain.bb 
+shortLabel	chain
+longLabel	chain
+type	bigBed
+
+track coiled-coil_region
+bigDataUrl	coiled-coil_region.bb 
+shortLabel	coiled-coil region
+longLabel	coiled-coil region
+type	bigBed
+
+track compositionally_biased_region
+bigDataUrl	compositionally_biased_region.bb 
+shortLabel	compositionally biased region
+longLabel	compositionally biased region
+type	bigBed
+
+track disulfide_bond
+bigDataUrl	disulfide_bond.bb 
+shortLabel	disulfide bond
+longLabel	disulfide bond
+type	bigBed
+
+track domain
+bigDataUrl	domain.bb 
+shortLabel	domain
+longLabel	domain
+type	bigBed
+
+track glycosylation_site
+bigDataUrl	glycosylation_site.bb 
+shortLabel	glycosylation site
+longLabel	glycosylation site
+type	bigBed
+
+track helix
+bigDataUrl	helix.bb 
+shortLabel	helix
+longLabel	helix
+type	bigBed
+
+track metal_ion-binding_site
+bigDataUrl	metal_ion-binding_site.bb 
+shortLabel	metal ion-binding site
+longLabel	metal ion-binding site
+type	bigBed
+
+track modified_residue
+bigDataUrl	modified_residue.bb 
+shortLabel	modified residue
+longLabel	modified residue
+type	bigBed
+
+track mutagenesis_site
+bigDataUrl	mutagenesis_site.bb 
+shortLabel	mutagenesis site
+longLabel	mutagenesis site
+type	bigBed
+
+track region_of_interest
+bigDataUrl	region_of_interest.bb 
+shortLabel	region of interest
+longLabel	region of interest
+type	bigBed
+
+track sequence_conflict
+bigDataUrl	sequence_conflict.bb 
+shortLabel	sequence conflict
+longLabel	sequence conflict
+type	bigBed
+
+track sequence_variant
+bigDataUrl	sequence_variant.bb 
+shortLabel	sequence variant
+longLabel	sequence variant
+type	bigBed
+
+track short_sequence_motif
+bigDataUrl	short_sequence_motif.bb 
+shortLabel	short sequence motif
+longLabel	short sequence motif
+type	bigBed
+
+track signal_peptide
+bigDataUrl	signal_peptide.bb 
+shortLabel	signal peptide
+longLabel	signal peptide
+type	bigBed
+
+track site
+bigDataUrl	site.bb 
+shortLabel	site
+longLabel	site
+type	bigBed
+
+track splice_variant
+bigDataUrl	splice_variant.bb 
+shortLabel	splice variant
+longLabel	splice variant
+type	bigBed
+
+track strand
+bigDataUrl	strand.bb 
+shortLabel	strand
+longLabel	strand
+type	bigBed
+
+track topological_domain
+bigDataUrl	topological_domain.bb 
+shortLabel	topological domain
+longLabel	topological domain
+type	bigBed
+
+track transmembrane_region
+bigDataUrl	transmembrane_region.bb 
+shortLabel	transmembrane region
+longLabel	transmembrane region
+type	bigBed
+
+track turn
+bigDataUrl	turn.bb 
+shortLabel	turn
+longLabel	turn
+type	bigBed
+
+track zinc_finger_region
+bigDataUrl	zinc_finger_region.bb 
+shortLabel	zinc finger region
+longLabel	zinc finger region
+type	bigBed
+
+track UTR
+bigDataUrl	UTR.bb 
+shortLabel	UTR
+longLabel	UTR
+type	bigBed
+
+track CDS
+bigDataUrl	CDS.bb 
+shortLabel	CDS
+longLabel	CDS
+type	bigBed
+
+track misc_feature
+bigDataUrl	misc_feature.bb 
+shortLabel	misc feature
+longLabel	misc feature
+type	bigBed
+
+track primer_bind
+bigDataUrl	primer_bind.bb 
+shortLabel	primer bind
+longLabel	primer bind
+type	bigBed
+

@@ -1,0 +1,5 @@
+hub Rotavirus
+shortLabel Rotavirus
+longLabel Rotavirus
+genomesFile genomes.txt
+email plindenbaum@yahoo.fr

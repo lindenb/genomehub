@@ -1,4 +1,0 @@
-PROXYHOST=proxy-upgrade.univ-nantes.prive
-PROXYPORT=3128
-XJCPROXY=-httpproxy ${PROXYHOST}:${PROXYPORT}
-CURLPROXY= --proxy ${PROXYHOST}:${PROXYPORT}

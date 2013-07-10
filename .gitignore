@@ -6,3 +6,8 @@ jeter*
 .project
 bin
 tmp
+*.bed
+*.nhr
+*.nin
+*.nsq
+chrom.sizes

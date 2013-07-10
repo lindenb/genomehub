@@ -1,265 +1,304 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="genomehub2make.xsl"?>
 <genomeHub >
+  <name>Rotavirus</name>
+  <shortLabel>Rotavirus</shortLabel>
+  <longLabel>Rotavirus</longLabel>
+  <email>plindenbaum@yahoo.fr</email>
+
+  <accessions id="set1">
+  	<acn>GU144588</acn>
+  	<acn>U26552</acn>
+  	<acn>AF458087</acn>
+  	<acn>M88768</acn>
+
+	<acn source="uniprot">Q0H8C5</acn>
+	<acn source="uniprot">Q45UF6</acn>
+	<acn source="uniprot">Q3ZK61</acn>
+	<acn source="uniprot">B3SRS0</acn>
+	<acn source="uniprot">Q76VV3</acn>
+	<acn source="uniprot">Q86194</acn>
+	<acn source="uniprot">O40626</acn>
+	<acn source="uniprot">B3SRR2</acn>
+	<acn source="uniprot">Q9PY94</acn>
+	<acn source="uniprot">P35423</acn>
+	<acn source="uniprot">Q9QNA9</acn>
+	<acn source="uniprot">B3SRU4</acn>
+	<acn source="uniprot">B3SRV2</acn>
+	<acn source="uniprot">Q82045</acn>
+	<acn source="uniprot">P35424</acn>
+	<acn source="uniprot">Q00033</acn>
+	<acn source="uniprot">P12475</acn>
+	<acn source="uniprot">P15687</acn>
+	<acn source="uniprot">A2T3M4</acn>
+	<acn source="uniprot">B2BRG2</acn>
+	<acn source="uniprot">B3SRX6</acn>
+	<acn source="uniprot">Q3ZK62</acn>
+	<acn source="uniprot">B3SRS2</acn>
+	<acn source="uniprot">Q0H8C2</acn>
+	<acn source="uniprot">P03538</acn>
+	<acn source="uniprot">A4ZCW3</acn>
+	<acn source="uniprot">B3SRQ6</acn>
+	<acn source="uniprot">B3SRR4</acn>
+	<acn source="uniprot">Q9PY93</acn>
+	<acn source="uniprot">Q03240</acn>
+	<acn source="uniprot">Q9QNA8</acn>
+	<acn source="uniprot">A3DSK8</acn>
+	<acn source="uniprot">B3SRV4</acn>
+	<acn source="uniprot">B3SRX0</acn>
+	<acn source="uniprot">Q03245</acn>
+	<acn source="uniprot">Q45UF4</acn>
+	<acn source="uniprot">Q86484</acn>
+	<acn source="uniprot">Q86505</acn>
+	<acn source="uniprot">P03537</acn>
+	<acn source="uniprot">A2T3P0</acn>
+	<acn source="uniprot">B2BRG3</acn>
+	<acn source="uniprot">B3SRX8</acn>
+	<acn source="uniprot">Q3ZK63</acn>
+	<acn source="uniprot">B3SRS1</acn>
+	<acn source="uniprot">Q0H8C1</acn>
+	<acn source="uniprot">P04514</acn>
+	<acn source="uniprot">A4ZCW4</acn>
+	<acn source="uniprot">Q82051</acn>
+	<acn source="uniprot">B3SRR3</acn>
+	<acn source="uniprot">Q9PY95</acn>
+	<acn source="uniprot">A1YTU9</acn>
+	<acn source="uniprot">Q82050</acn>
+	<acn source="uniprot">A3DSK9</acn>
+	<acn source="uniprot">B3SRV3</acn>
+	<acn source="uniprot">Q82053</acn>
+	<acn source="uniprot">Q82054</acn>
+	<acn source="uniprot">Q5Y9A9</acn>
+	<acn source="uniprot">P27586</acn>
+	<acn source="uniprot">Q86504</acn>
+	<acn source="uniprot">P03536</acn>
+	<acn source="uniprot">A2T3N5</acn>
+	<acn source="uniprot">B2BRG4</acn>
+	<acn source="uniprot">Q82049</acn>
+	<acn source="uniprot">Q3ZK64</acn>
+	<acn source="uniprot">Q9YJN7</acn>
+	<acn source="uniprot">A9Q1L1</acn>
+	<acn source="uniprot">P04513</acn>
+	<acn source="uniprot">O56850</acn>
+	<acn source="uniprot">B3SRQ8</acn>
+	<acn source="uniprot">P30031</acn>
+	<acn source="uniprot">Q82055</acn>
+	<acn source="uniprot">B3SRT2</acn>
+	<acn source="uniprot">Q9QNA6</acn>
+	<acn source="uniprot">Q91E93</acn>
+	<acn source="uniprot">B3SRV6</acn>
+	<acn source="uniprot">Q82035</acn>
+	<acn source="uniprot">P03535</acn>
+	<acn source="uniprot">Q45UF1</acn>
+	<acn source="uniprot">Q9YS17</acn>
+	<acn source="uniprot">Q6YLV5</acn>
+	<acn source="uniprot">P04512</acn>
+	<acn source="uniprot">A2T3Q0</acn>
+	<acn source="uniprot">Q8JNB2</acn>
+	<acn source="uniprot">B3SRY0</acn>
+	<acn source="uniprot">Q3ZK65</acn>
+	<acn source="uniprot">B3SRS5</acn>
+	<acn source="uniprot">A9Q1L2</acn>
+	<acn source="uniprot">P04515</acn>
+	<acn source="uniprot">Q8V9C3</acn>
+	<acn source="uniprot">P23047</acn>
+	<acn source="uniprot">B3SRR7</acn>
+	<acn source="uniprot">Q00682</acn>
+	<acn source="uniprot">P23048</acn>
+	<acn source="uniprot">Q9QNA5</acn>
+	<acn source="uniprot">A3DSL0</acn>
+	<acn source="uniprot">B3SRV7</acn>
+	<acn source="uniprot">B3SRX3</acn>
+	<acn source="uniprot">P04516</acn>
+	<acn source="uniprot">Q45UF0</acn>
+	<acn source="uniprot">P36358</acn>
+	<acn source="uniprot">Q9E8F2</acn>
+	<acn source="uniprot">P11202</acn>
+	<acn source="uniprot">A2T3Q9</acn>
+	<acn source="uniprot">B2BRG5</acn>
+	<acn source="uniprot">B3SRY1</acn>
+	<acn source="uniprot">P0C710</acn>
+	<acn source="uniprot">B3SRS6</acn>
+	<acn source="uniprot">P0C6Z2</acn>
+	<acn source="uniprot">P0C713</acn>
+	<acn source="uniprot">B3SRR0</acn>
+	<acn source="uniprot">B3SRR8</acn>
+	<acn source="uniprot">B3SRT4</acn>
+	<acn source="uniprot">P0C711</acn>
+	<acn source="uniprot">B3SRV0</acn>
+	<acn source="uniprot">B3SRV8</acn>
+	<acn source="uniprot">B3SRX4</acn>
+	<acn source="uniprot">Q993T1</acn>
+	<acn source="uniprot">Q9E8F1</acn>
+	<acn source="uniprot">P11203</acn>
+	<acn source="uniprot">A2T3R0</acn>
+	<acn source="uniprot">P0C712</acn>
+	<acn source="uniprot">B3SRY2</acn>
+	<acn source="uniprot">Q3ZK55</acn>
+	<acn source="uniprot">B1NKR3</acn>
+	<acn source="uniprot">A9Q1K7</acn>
+	<acn source="uniprot">P21615</acn>
+	<acn source="uniprot">A4ZCW2</acn>
+	<acn source="uniprot">B2BMQ6</acn>
+	<acn source="uniprot">B1NKQ9</acn>
+	<acn source="uniprot">Q91E95</acn>
+	<acn source="uniprot">A7J3A6</acn>
+	<acn source="uniprot">Q9QNB3</acn>
+	<acn source="uniprot">A3DSK5</acn>
+	<acn source="uniprot">B1NKS9</acn>
+	<acn source="uniprot">B1NKT7</acn>
+	<acn source="uniprot">A4ZCW8</acn>
+	<acn source="uniprot">Q45UG0</acn>
+	<acn source="uniprot">P26190</acn>
+	<acn source="uniprot">P17468</acn>
+	<acn source="uniprot">P22678</acn>
+	<acn source="uniprot">A2T3S0</acn>
+	<acn source="uniprot">B2BMF7</acn>
+	<acn source="uniprot">B1NKU1</acn>
+	<acn source="uniprot">Q3ZK56</acn>
+	<acn source="uniprot">B1NKR4</acn>
+	<acn source="uniprot">A9Q1K8</acn>
+	<acn source="uniprot">P17462</acn>
+	<acn source="uniprot">A4ZCW5</acn>
+	<acn source="uniprot">B1NKQ6</acn>
+	<acn source="uniprot">B1NKR0</acn>
+	<acn source="uniprot">Q91E96</acn>
+	<acn source="uniprot">B1NKR8</acn>
+	<acn source="uniprot">Q9QNB2</acn>
+	<acn source="uniprot">A3DSK6</acn>
+	<acn source="uniprot">B1NKT0</acn>
+	<acn source="uniprot">B1NKT8</acn>
+	<acn source="uniprot">P11231</acn>
+	<acn source="uniprot">Q45UF9</acn>
+	<acn source="uniprot">P26191</acn>
+	<acn source="uniprot">P12472</acn>
+	<acn source="uniprot">P22672</acn>
+	<acn source="uniprot">A2T3R5</acn>
+	<acn source="uniprot">B2BMF8</acn>
+	<acn source="uniprot">B1NKU2</acn>
+	<acn source="uniprot">Q3ZK57</acn>
+	<acn source="uniprot">B1NKR5</acn>
+	<acn source="uniprot">A9Q1K9</acn>
+	<acn source="uniprot">Q6WAT6</acn>
+	<acn source="uniprot">A4ZCW6</acn>
+	<acn source="uniprot">Q6WNW3</acn>
+	<acn source="uniprot">B1NKR1</acn>
+	<acn source="uniprot">Q82041</acn>
+	<acn source="uniprot">Q6WNW5</acn>
+	<acn source="uniprot">Q9QNB1</acn>
+	<acn source="uniprot">B1NKS7</acn>
+	<acn source="uniprot">B1NKT1</acn>
+	<acn source="uniprot">B1NKT9</acn>
+	<acn source="uniprot">Q6WVH5</acn>
+	<acn source="uniprot">Q45UF7</acn>
+	<acn source="uniprot">P26192</acn>
+	<acn source="uniprot">Q8BB04</acn>
+	<acn source="uniprot">P15736</acn>
+	<acn source="uniprot">A2T3S5</acn>
+	<acn source="uniprot">B2BMF9</acn>
+	<acn source="uniprot">B1NKU3</acn>
+	<acn source="uniprot">Q3ZK58</acn>
+	<acn source="uniprot">B3SRR9</acn>
+	<acn source="uniprot">A9Q1L0</acn>
+	<acn source="uniprot">P12474</acn>
+	<acn source="uniprot">P39033</acn>
+	<acn source="uniprot">P26451</acn>
+	<acn source="uniprot">B3SRR1</acn>
+	<acn source="uniprot">Q82040</acn>
+	<acn source="uniprot">P11196</acn>
+	<acn source="uniprot">P13842</acn>
+	<acn source="uniprot">P21284</acn>
+	<acn source="uniprot">P11195</acn>
+	<acn source="uniprot">P11200</acn>
+	<acn source="uniprot">P11193</acn>
+	<acn source="uniprot">Q45UF8</acn>
+	<acn source="uniprot">P26193</acn>
+	<acn source="uniprot">Q96802</acn>
+	<acn source="uniprot">P12976</acn>
+	<acn source="uniprot">A2T3T2</acn>
+	<acn source="uniprot">Q8JNB4</acn>
+	<acn source="uniprot">B3SRX5</acn>
+	<acn source="uniprot">Q3ZK59</acn>
+	<acn source="uniprot">B1NKR6</acn>
+	<acn source="uniprot">Q0H8C4</acn>
+	<acn source="uniprot">P18610</acn>
+	<acn source="uniprot">A4ZCW7</acn>
+	<acn source="uniprot">B1NKQ8</acn>
+	<acn source="uniprot">B1NKR2</acn>
+	<acn source="uniprot">P69481</acn>
+	<acn source="uniprot">A7J3A8</acn>
+	<acn source="uniprot">Q9QNB0</acn>
+	<acn source="uniprot">B1NKS8</acn>
+	<acn source="uniprot">B1NKT2</acn>
+	<acn source="uniprot">B1NKU0</acn>
+	<acn source="uniprot">P03530</acn>
+	<acn source="uniprot">Q45UF5</acn>
+	<acn source="uniprot">P14162</acn>
+	<acn source="uniprot">P04509</acn>
+	<acn source="uniprot">P03531</acn>
+	<acn source="uniprot">A2T3T0</acn>
+	<acn source="uniprot">Q8JTI5</acn>
+	<acn source="uniprot">B1NKU4</acn>
+	<acn source="uniprot">Q3ZK60</acn>
+	<acn source="uniprot">P11853</acn>
+	<acn source="uniprot">Q0H8C3</acn>
+	<acn source="uniprot">P03534</acn>
+	<acn source="uniprot">O42044</acn>
+	<acn source="uniprot">B3SRQ7</acn>
+	<acn source="uniprot">Q07272</acn>
+	<acn source="uniprot">Q89865</acn>
+	<acn source="uniprot">P11850</acn>
+	<acn source="uniprot">Q76WK3</acn>
+	<acn source="uniprot">P21285</acn>
+	<acn source="uniprot">P11854</acn>
+	<acn source="uniprot">P10501</acn>
+	<acn source="uniprot">P03532</acn>
+	<acn source="uniprot">Q45UF2</acn>
+	<acn source="uniprot">P30217</acn>
+	<acn source="uniprot">Q86515</acn>
+	<acn source="uniprot">P03533</acn>
+	<acn source="uniprot">A2T3P5</acn>
+	<acn source="uniprot">Q8JNB3</acn>
+	<acn source="uniprot">B3SRX9</acn>
+  </accessions>
   
   <genome id="rf11">
     <description>Rotavirus RF11</description>
-    <organism>organism</organism>
-    <defaultPos>defaultPos</defaultPos>
-    <scientificName>scientificName</scientificName>
+    <organism>Rotavirus</organism>
+    <defaultPos>RF01:1-10</defaultPos>
+    <scientificName>Rotavirus</scientificName>
     <fasta>rotavirus/rf/rf.fa</fasta>
     <protein dna="token" type="ncbi">token</protein>
-    <group id="ALL">
-<entry source="uniprot">Q0H8C5</entry>
-<entry source="uniprot">Q45UF6</entry>
-<entry source="uniprot">Q3ZK61</entry>
-<entry source="uniprot">B3SRS0</entry>
-<entry source="uniprot">Q76VV3</entry>
-<entry source="uniprot">Q86194</entry>
-<entry source="uniprot">O40626</entry>
-<entry source="uniprot">B3SRR2</entry>
-<entry source="uniprot">Q9PY94</entry>
-<entry source="uniprot">P35423</entry>
-<entry source="uniprot">Q9QNA9</entry>
-<entry source="uniprot">B3SRU4</entry>
-<entry source="uniprot">B3SRV2</entry>
-<entry source="uniprot">Q82045</entry>
-<entry source="uniprot">P35424</entry>
-<entry source="uniprot">Q00033</entry>
-<entry source="uniprot">P12475</entry>
-<entry source="uniprot">P15687</entry>
-<entry source="uniprot">A2T3M4</entry>
-<entry source="uniprot">B2BRG2</entry>
-<entry source="uniprot">B3SRX6</entry>
-<entry source="uniprot">Q3ZK62</entry>
-<entry source="uniprot">B3SRS2</entry>
-<entry source="uniprot">Q0H8C2</entry>
-<entry source="uniprot">P03538</entry>
-<entry source="uniprot">A4ZCW3</entry>
-<entry source="uniprot">B3SRQ6</entry>
-<entry source="uniprot">B3SRR4</entry>
-<entry source="uniprot">Q9PY93</entry>
-<entry source="uniprot">Q03240</entry>
-<entry source="uniprot">Q9QNA8</entry>
-<entry source="uniprot">A3DSK8</entry>
-<entry source="uniprot">B3SRV4</entry>
-<entry source="uniprot">B3SRX0</entry>
-<entry source="uniprot">Q03245</entry>
-<entry source="uniprot">Q45UF4</entry>
-<entry source="uniprot">Q86484</entry>
-<entry source="uniprot">Q86505</entry>
-<entry source="uniprot">P03537</entry>
-<entry source="uniprot">A2T3P0</entry>
-<entry source="uniprot">B2BRG3</entry>
-<entry source="uniprot">B3SRX8</entry>
-<entry source="uniprot">Q3ZK63</entry>
-<entry source="uniprot">B3SRS1</entry>
-<entry source="uniprot">Q0H8C1</entry>
-<entry source="uniprot">P04514</entry>
-<entry source="uniprot">A4ZCW4</entry>
-<entry source="uniprot">Q82051</entry>
-<entry source="uniprot">B3SRR3</entry>
-<entry source="uniprot">Q9PY95</entry>
-<entry source="uniprot">A1YTU9</entry>
-<entry source="uniprot">Q82050</entry>
-<entry source="uniprot">A3DSK9</entry>
-<entry source="uniprot">B3SRV3</entry>
-<entry source="uniprot">Q82053</entry>
-<entry source="uniprot">Q82054</entry>
-<entry source="uniprot">Q5Y9A9</entry>
-<entry source="uniprot">P27586</entry>
-<entry source="uniprot">Q86504</entry>
-<entry source="uniprot">P03536</entry>
-<entry source="uniprot">A2T3N5</entry>
-<entry source="uniprot">B2BRG4</entry>
-<entry source="uniprot">Q82049</entry>
-<entry source="uniprot">Q3ZK64</entry>
-<entry source="uniprot">Q9YJN7</entry>
-<entry source="uniprot">A9Q1L1</entry>
-<entry source="uniprot">P04513</entry>
-<entry source="uniprot">O56850</entry>
-<entry source="uniprot">B3SRQ8</entry>
-<entry source="uniprot">P30031</entry>
-<entry source="uniprot">Q82055</entry>
-<entry source="uniprot">B3SRT2</entry>
-<entry source="uniprot">Q9QNA6</entry>
-<entry source="uniprot">Q91E93</entry>
-<entry source="uniprot">B3SRV6</entry>
-<entry source="uniprot">Q82035</entry>
-<entry source="uniprot">P03535</entry>
-<entry source="uniprot">Q45UF1</entry>
-<entry source="uniprot">Q9YS17</entry>
-<entry source="uniprot">Q6YLV5</entry>
-<entry source="uniprot">P04512</entry>
-<entry source="uniprot">A2T3Q0</entry>
-<entry source="uniprot">Q8JNB2</entry>
-<entry source="uniprot">B3SRY0</entry>
-<entry source="uniprot">Q3ZK65</entry>
-<entry source="uniprot">B3SRS5</entry>
-<entry source="uniprot">A9Q1L2</entry>
-<entry source="uniprot">P04515</entry>
-<entry source="uniprot">Q8V9C3</entry>
-<entry source="uniprot">P23047</entry>
-<entry source="uniprot">B3SRR7</entry>
-<entry source="uniprot">Q00682</entry>
-<entry source="uniprot">P23048</entry>
-<entry source="uniprot">Q9QNA5</entry>
-<entry source="uniprot">A3DSL0</entry>
-<entry source="uniprot">B3SRV7</entry>
-<entry source="uniprot">B3SRX3</entry>
-<entry source="uniprot">P04516</entry>
-<entry source="uniprot">Q45UF0</entry>
-<entry source="uniprot">P36358</entry>
-<entry source="uniprot">Q9E8F2</entry>
-<entry source="uniprot">P11202</entry>
-<entry source="uniprot">A2T3Q9</entry>
-<entry source="uniprot">B2BRG5</entry>
-<entry source="uniprot">B3SRY1</entry>
-<entry source="uniprot">P0C710</entry>
-<entry source="uniprot">B3SRS6</entry>
-<entry source="uniprot">P0C6Z2</entry>
-<entry source="uniprot">P0C713</entry>
-<entry source="uniprot">B3SRR0</entry>
-<entry source="uniprot">B3SRR8</entry>
-<entry source="uniprot">B3SRT4</entry>
-<entry source="uniprot">P0C711</entry>
-<entry source="uniprot">B3SRV0</entry>
-<entry source="uniprot">B3SRV8</entry>
-<entry source="uniprot">B3SRX4</entry>
-<entry source="uniprot">Q993T1</entry>
-<entry source="uniprot">Q9E8F1</entry>
-<entry source="uniprot">P11203</entry>
-<entry source="uniprot">A2T3R0</entry>
-<entry source="uniprot">P0C712</entry>
-<entry source="uniprot">B3SRY2</entry>
-<entry source="uniprot">Q3ZK55</entry>
-<entry source="uniprot">B1NKR3</entry>
-<entry source="uniprot">A9Q1K7</entry>
-<entry source="uniprot">P21615</entry>
-<entry source="uniprot">A4ZCW2</entry>
-<entry source="uniprot">B2BMQ6</entry>
-<entry source="uniprot">B1NKQ9</entry>
-<entry source="uniprot">Q91E95</entry>
-<entry source="uniprot">A7J3A6</entry>
-<entry source="uniprot">Q9QNB3</entry>
-<entry source="uniprot">A3DSK5</entry>
-<entry source="uniprot">B1NKS9</entry>
-<entry source="uniprot">B1NKT7</entry>
-<entry source="uniprot">A4ZCW8</entry>
-<entry source="uniprot">Q45UG0</entry>
-<entry source="uniprot">P26190</entry>
-<entry source="uniprot">P17468</entry>
-<entry source="uniprot">P22678</entry>
-<entry source="uniprot">A2T3S0</entry>
-<entry source="uniprot">B2BMF7</entry>
-<entry source="uniprot">B1NKU1</entry>
-<entry source="uniprot">Q3ZK56</entry>
-<entry source="uniprot">B1NKR4</entry>
-<entry source="uniprot">A9Q1K8</entry>
-<entry source="uniprot">P17462</entry>
-<entry source="uniprot">A4ZCW5</entry>
-<entry source="uniprot">B1NKQ6</entry>
-<entry source="uniprot">B1NKR0</entry>
-<entry source="uniprot">Q91E96</entry>
-<entry source="uniprot">B1NKR8</entry>
-<entry source="uniprot">Q9QNB2</entry>
-<entry source="uniprot">A3DSK6</entry>
-<entry source="uniprot">B1NKT0</entry>
-<entry source="uniprot">B1NKT8</entry>
-<entry source="uniprot">P11231</entry>
-<entry source="uniprot">Q45UF9</entry>
-<entry source="uniprot">P26191</entry>
-<entry source="uniprot">P12472</entry>
-<entry source="uniprot">P22672</entry>
-<entry source="uniprot">A2T3R5</entry>
-<entry source="uniprot">B2BMF8</entry>
-<entry source="uniprot">B1NKU2</entry>
-<entry source="uniprot">Q3ZK57</entry>
-<entry source="uniprot">B1NKR5</entry>
-<entry source="uniprot">A9Q1K9</entry>
-<entry source="uniprot">Q6WAT6</entry>
-<entry source="uniprot">A4ZCW6</entry>
-<entry source="uniprot">Q6WNW3</entry>
-<entry source="uniprot">B1NKR1</entry>
-<entry source="uniprot">Q82041</entry>
-<entry source="uniprot">Q6WNW5</entry>
-<entry source="uniprot">Q9QNB1</entry>
-<entry source="uniprot">B1NKS7</entry>
-<entry source="uniprot">B1NKT1</entry>
-<entry source="uniprot">B1NKT9</entry>
-<entry source="uniprot">Q6WVH5</entry>
-<entry source="uniprot">Q45UF7</entry>
-<entry source="uniprot">P26192</entry>
-<entry source="uniprot">Q8BB04</entry>
-<entry source="uniprot">P15736</entry>
-<entry source="uniprot">A2T3S5</entry>
-<entry source="uniprot">B2BMF9</entry>
-<entry source="uniprot">B1NKU3</entry>
-<entry source="uniprot">Q3ZK58</entry>
-<entry source="uniprot">B3SRR9</entry>
-<entry source="uniprot">A9Q1L0</entry>
-<entry source="uniprot">P12474</entry>
-<entry source="uniprot">P39033</entry>
-<entry source="uniprot">P26451</entry>
-<entry source="uniprot">B3SRR1</entry>
-<entry source="uniprot">Q82040</entry>
-<entry source="uniprot">P11196</entry>
-<entry source="uniprot">P13842</entry>
-<entry source="uniprot">P21284</entry>
-<entry source="uniprot">P11195</entry>
-<entry source="uniprot">P11200</entry>
-<entry source="uniprot">P11193</entry>
-<entry source="uniprot">Q45UF8</entry>
-<entry source="uniprot">P26193</entry>
-<entry source="uniprot">Q96802</entry>
-<entry source="uniprot">P12976</entry>
-<entry source="uniprot">A2T3T2</entry>
-<entry source="uniprot">Q8JNB4</entry>
-<entry source="uniprot">B3SRX5</entry>
-<entry source="uniprot">Q3ZK59</entry>
-<entry source="uniprot">B1NKR6</entry>
-<entry source="uniprot">Q0H8C4</entry>
-<entry source="uniprot">P18610</entry>
-<entry source="uniprot">A4ZCW7</entry>
-<entry source="uniprot">B1NKQ8</entry>
-<entry source="uniprot">B1NKR2</entry>
-<entry source="uniprot">P69481</entry>
-<entry source="uniprot">A7J3A8</entry>
-<entry source="uniprot">Q9QNB0</entry>
-<entry source="uniprot">B1NKS8</entry>
-<entry source="uniprot">B1NKT2</entry>
-<entry source="uniprot">B1NKU0</entry>
-<entry source="uniprot">P03530</entry>
-<entry source="uniprot">Q45UF5</entry>
-<entry source="uniprot">P14162</entry>
-<entry source="uniprot">P04509</entry>
-<entry source="uniprot">P03531</entry>
-<entry source="uniprot">A2T3T0</entry>
-<entry source="uniprot">Q8JTI5</entry>
-<entry source="uniprot">B1NKU4</entry>
-<entry source="uniprot">Q3ZK60</entry>
-<entry source="uniprot">P11853</entry>
-<entry source="uniprot">Q0H8C3</entry>
-<entry source="uniprot">P03534</entry>
-<entry source="uniprot">O42044</entry>
-<entry source="uniprot">B3SRQ7</entry>
-<entry source="uniprot">Q07272</entry>
-<entry source="uniprot">Q89865</entry>
-<entry source="uniprot">P11850</entry>
-<entry source="uniprot">Q76WK3</entry>
-<entry source="uniprot">P21285</entry>
-<entry source="uniprot">P11854</entry>
-<entry source="uniprot">P10501</entry>
-<entry source="uniprot">P03532</entry>
-<entry source="uniprot">Q45UF2</entry>
-<entry source="uniprot">P30217</entry>
-<entry source="uniprot">Q86515</entry>
-<entry source="uniprot">P03533</entry>
-<entry source="uniprot">A2T3P5</entry>
-<entry source="uniprot">Q8JNB3</entry>
-<entry source="uniprot">B3SRX9</entry>
-
-    </group>
+	<group id="active_site"><accessions ref="set1"/><include>active site</include></group>
+	<group id="calcium-binding_region"><accessions ref="set1"/><include>calcium-binding region</include></group>
+	<group id="chain"><accessions ref="set1"/><include>chain</include></group>
+	<group id="coiled-coil_region"><accessions ref="set1"/><include>coiled-coil region</include></group>
+	<group id="compositionally_biased_region"><accessions ref="set1"/><include>compositionally biased region</include></group>
+	<group id="disulfide_bond"><accessions ref="set1"/><include>disulfide bond</include></group>
+	<group id="domain"><accessions ref="set1"/><include>domain</include></group>
+	<group id="glycosylation_site"><accessions ref="set1"/><include>glycosylation site</include></group>
+	<group id="helix"><accessions ref="set1"/><include>helix</include></group>
+	<group id="metal_ion-binding_site"><accessions ref="set1"/><include>metal ion-binding site</include></group>
+	<group id="modified_residue"><accessions ref="set1"/><include>modified residue</include></group>
+	<group id="mutagenesis_site"><accessions ref="set1"/><include>mutagenesis site</include></group>
+	<group id="region_of_interest"><accessions ref="set1"/><include>region of interest</include></group>
+	<group id="sequence_conflict"><accessions ref="set1"/><include>sequence conflict</include></group>
+	<group id="sequence_variant"><accessions ref="set1"/><include>sequence variant</include><include>variation</include></group>
+	<group id="short_sequence_motif"><accessions ref="set1"/><include>short sequence motif</include></group>
+	<group id="signal_peptide"><accessions ref="set1"/><include>signal peptide</include></group>
+	<group id="site"><accessions ref="set1"/><include>site</include></group>
+	<group id="splice_variant"><accessions ref="set1"/><include>splice variant</include></group>
+	<group id="strand"><accessions ref="set1"/><include>strand</include></group>
+	<group id="topological_domain"><accessions ref="set1"/><include>topological domain</include></group>
+	<group id="transmembrane_region"><accessions ref="set1"/><include>transmembrane region</include></group>
+	<group id="turn"><accessions ref="set1"/><include>turn</include></group>
+	<group id="zinc_finger_region"><accessions ref="set1"/><include>zinc finger region</include></group>
+	
+	<group id="UTR"><accessions ref="set1"/><include>3'UTR</include><include>5'UTR</include></group>
+	<group id="CDS"><accessions ref="set1"/><include>CDS</include></group>
+	<!-- <group id="gene"><accessions ref="set1"/><include>gene</include></group> -->
+	<group id="misc_feature"><accessions ref="set1"/><include>misc_feature</include></group>
+	<group id="primer_bind"><accessions ref="set1"/><include>primer_bind</include></group>
   </genome>
   
 </genomeHub>

@@ -15,7 +15,7 @@ Usage :
 	xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
 	version='1.0'
 	>
-<xsl:key name="entries" match="entry" use="."/>
+<xsl:key name="entries" match="/genomeHub/accessions/acn" use="."/>
 <xsl:output method="text"  encoding="UTF-8" />
 
 <xsl:template match="/">
@@ -25,6 +25,7 @@ Usage :
 <xsl:template match="genomeHub">
 SHELL=/bin/bash
 CURLPROXY= -x proxy-upgrade.univ-nantes.prive:3128 
+TMPDIR=tmp
 .PHONY=all clean <xsl:for-each select="genome"><xsl:value-of select="@id"/></xsl:for-each>
 all: hub.txt
 
@@ -65,10 +66,10 @@ genomes.txt: <xsl:for-each select="genome"><xsl:value-of select="@id"/></xsl:for
 
 <xsl:apply-templates select="genome"/>
 
-<xsl:apply-templates select="genome/group/entry"/>
+<xsl:apply-templates select="accessions/acn"/>
 
 clean:
-	rm -f hub.txt genomes.txt
+	rm -f hub.txt genomes.txt ${TMPDIR}
 
 </xsl:template>
 
@@ -77,36 +78,40 @@ clean:
 
 ###############################################################################
 
-<xsl:value-of select="@id"/>: $(addsuffix .2bit,$(basename <xsl:value-of select="fasta"/>)) \
-	$(dir <xsl:value-of select="fasta"/>)trackDb.txt
+<xsl:value-of select="@id"/>: <xsl:apply-templates select="." mode="bit2"/> <xsl:apply-templates select="." mode="trackDB"/> 
+	
+<xsl:text>
+</xsl:text>
 
 
-$(addsuffix .2bit,$(basename <xsl:value-of select="fasta"/>)) :  <xsl:value-of select="fasta"/>
+<xsl:apply-templates select="." mode="bit2"/> :  <xsl:value-of select="fasta"/>
 	mkdir -p $(dir $@)
 	faToTwoBit -noMask &lt; $@
 
-$(addsuffix .nsq,<xsl:value-of select="fasta"/>) :  <xsl:value-of select="fasta"/>
+<xsl:apply-templates select="." mode="blast"/> :  <xsl:value-of select="fasta"/>
 	mkdir -p $(dir $@)
-	makeblastdb -dbtype nucl -in &lt;
+	makeblastdb -dbtype nucl -in $&lt;
 
-$(dir <xsl:value-of select="fasta"/>)trackDb.txt : <xsl:for-each select="group"> $(dir <xsl:value-of select="../fasta"/>)<xsl:value-of select="@id"/>.bb </xsl:for-each>
+<xsl:apply-templates select="." mode="trackDB"/>  : <xsl:for-each select="group"> <xsl:apply-templates select="." mode="bb"/> </xsl:for-each>
 	mkdir -p $(dir $@)
 	rm -f $@
 	<xsl:for-each select="group">echo "track <xsl:value-of select="@id"/>" &gt;&gt; $@ ;
-	echo "bigDataUrl $(dir $@)<xsl:value-of select="@id"/>.bb" &gt;&gt; $@ ;
+	echo "bigDataUrl	<xsl:apply-templates select="." mode="basebb"/>" &gt;&gt; $@ ;
 	<xsl:choose>
-		<xsl:when test="shortLabel">echo "shortLabel <xsl:value-of select="shortLabel"/>" &gt;&gt; $@ ;</xsl:when>
-		<xsl:otherwise>echo "shortLabel <xsl:value-of select="@id"/>" &gt;&gt; $@ ;</xsl:otherwise>
+		<xsl:when test="shortLabel">echo "shortLabel	<xsl:value-of select="shortLabel"/>" &gt;&gt; $@ ;</xsl:when>
+		<xsl:otherwise>echo "shortLabel	<xsl:value-of select="translate(@id,'_',' ')"/>" &gt;&gt; $@ ;</xsl:otherwise>
 	</xsl:choose>
 	<xsl:choose>
-		<xsl:when test="longLabel">echo "longLabel <xsl:value-of select="longLabel"/>" &gt;&gt; $@ ;</xsl:when>
-		<xsl:otherwise>echo "longLabel <xsl:value-of select="@id"/>" &gt;&gt; $@ ;</xsl:otherwise>
+		<xsl:when test="longLabel">echo "longLabel	<xsl:value-of select="longLabel"/>" &gt;&gt; $@ ;</xsl:when>
+		<xsl:otherwise>echo "longLabel	<xsl:value-of select="translate(@id,'_',' ')"/>" &gt;&gt; $@ ;</xsl:otherwise>
 	</xsl:choose>
 	echo "type	bigBed" &gt;&gt; $@ ;
 	echo "" &gt;&gt; $@ ;
 	</xsl:for-each>
-	
-$(dir <xsl:value-of select="fasta"/>)chrom.sizes: <xsl:value-of select="fasta"/>
+
+<xsl:text>
+</xsl:text>
+<xsl:apply-templates select="." mode="sizes"/>  : <xsl:value-of select="fasta"/>
 	mkdir -p $(dir $@)
 	awk 'BEGIN {N=0;S="";} /^>/ {if(N>0) {printf("%s\t%d\n",S,N);N=0;} S=substr($$0,2);next;} {N+=length($$0);} END {printf("%s\t%d\n",S,N); }' &lt; $&lt; &gt; $@
 	
@@ -118,47 +123,92 @@ $(dir <xsl:value-of select="fasta"/>)chrom.sizes: <xsl:value-of select="fasta"/>
 
 
 <xsl:template match="group">
+<xsl:variable name="fastapath" select="../fasta"/>
+<xsl:variable name="includes" select="include"/>
+<xsl:variable name="excludes" select="exclude"/>
 
-$(dir <xsl:value-of select="../fasta"/>)<xsl:value-of select="@id"/>.bb : $(dir <xsl:value-of select="../fasta"/>)<xsl:value-of select="@id"/>.bed $(dir <xsl:value-of select="../fasta"/>)chrom.sizes
+<xsl:apply-templates select="." mode="bb"/> : <xsl:apply-templates select="." mode="bed"/>  <xsl:apply-templates select="../fasta" mode="sizes"/>
 	mkdir -p $(dir $@)
-	LC_ALL=C sort -t '	' -k1,1 -k2,2n -k3,3n $&lt; | uniq &gt; $@.tmp.bed
-	bedToBigBed  $@.tmp.bed $(dir <xsl:value-of select="../fasta"/>)chrom.sizes $@
+	LC_ALL=C sort -t '	' -k1,1 -k2,2n -k3,3n -k4,4 -u $&lt;  &gt; $@.tmp.bed
+	bedToBigBed  $@.tmp.bed <xsl:apply-templates select="../fasta" mode="sizes"/> $@
 	rm $@.tmp.bed
 
-$(dir <xsl:value-of select="../fasta"/>)<xsl:value-of select="@id"/>.bed : $(addsuffix .nsq,<xsl:value-of select="../fasta"/>) <xsl:for-each select="entry"> tmp/<xsl:value-of select="."/>.fa tmp/<xsl:value-of select="."/>.xml </xsl:for-each>
-	rm -f $@
-	<xsl:for-each select="entry">
-	<xsl:choose><xsl:when test="@type='protein' or @source='uniprot'">tblastn</xsl:when><xsl:otherwise>blastn</xsl:otherwise></xsl:choose> -query tmp/<xsl:value-of select="."/>.fa -db <xsl:value-of select="../../fasta"/> -evalue 1E-3 -outfmt 5 &gt; $@.blast.xml 
-	java -cp ../../jsandbox/dist/mapblastannot.jar sandbox.MapBlastAnnotation <xsl:for-each select="../filter"> -F <xsl:value-of select="."/> </xsl:for-each> tmp/<xsl:value-of select="."/>.xml   $@.blast.xml &gt;&gt; $@
-	</xsl:for-each>
-	rm  $@.blast.xml
+<xsl:apply-templates select="." mode="bed"/> : <xsl:apply-templates select="../fasta" mode="blast"/> <xsl:apply-templates select="accessions" mode="dependencies"/>
+	rm -f $@<xsl:for-each select="accessions">
+	<xsl:variable name="ref" select="@ref"/>
+	<xsl:variable name="L" select="/genomeHub/accessions[@id=$ref]"/><xsl:for-each select="$L/acn">
+	xsltproc --novalid sequence2fasta.xsl <xsl:apply-templates select="." mode="xml"/> &gt; <xsl:apply-templates select="." mode="fa"/>
+	<xsl:text>
+	</xsl:text>
+	<xsl:choose>
+		<xsl:when test="@type='protein' or @source='uniprot'">tblastn</xsl:when>
+		<xsl:otherwise>blastn</xsl:otherwise>
+	</xsl:choose> -query <xsl:apply-templates select="." mode="fa"/> -db <xsl:value-of select="$fastapath"/> -evalue 1E-3 -outfmt 5 &gt; $@.xml
+	rm <xsl:apply-templates select="." mode="fa"/>
+	java -jar ../../jvarkit-git/dist/blastmapannots.jar  \
+		<xsl:for-each select="$includes"> INCLUDE="<xsl:value-of select="."/>" </xsl:for-each> \
+		<xsl:for-each select="$excludes"> EXCLUDE="<xsl:value-of select="."/>" </xsl:for-each> \
+		I=<xsl:apply-templates select="." mode="xml"/> \
+		B=$@.xml &gt;&gt; $@
+	rm $@.xml</xsl:for-each></xsl:for-each>
+	
+<xsl:text>
+</xsl:text>
+
 
 	
 </xsl:template>
 
 
-<xsl:template match="entry">
+<xsl:template match="acn">
 <xsl:if test="generate-id(.) = generate-id(key('entries',.))">
 
-tmp/<xsl:value-of select="."/>.xml : 
+<xsl:apply-templates select="." mode="xml"/> : 
 	mkdir -p $(dir $@)
 	curl ${CURLPROXY} -o $@ <xsl:choose>
 		<xsl:when test="@source='uniprot'">"http://www.uniprot.org/uniprot/<xsl:value-of select="."/>.xml"</xsl:when>
 		<xsl:when test="@type='dna'">"http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;rettype=gb&amp;id=<xsl:value-of select="."/>&amp;retmode=xml"</xsl:when>
 		<xsl:otherwise>"http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&amp;rettype=gb&amp;id=<xsl:value-of select="."/>&amp;retmode=xml"</xsl:otherwise>
 	</xsl:choose>
-	
 
-tmp/<xsl:value-of select="."/>.fa:
+<xsl:text>
+</xsl:text>
+
+<xsl:apply-templates select="." mode="fa"/>:
 	mkdir -p $(dir $@)
 	curl ${CURLPROXY} -o $@ <xsl:choose>
 		<xsl:when test="@source='uniprot'">"http://www.uniprot.org/uniprot/<xsl:value-of select="."/>.fasta"</xsl:when>
 		<xsl:when test="@type='dna'">"http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;rettype=fasta&amp;id=<xsl:value-of select="."/>"</xsl:when>
 		<xsl:otherwise>"http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&amp;rettype=fasta&amp;id=<xsl:value-of select="."/>"</xsl:otherwise>
 	</xsl:choose>
-		
+<xsl:text>
+</xsl:text>
+
+<xsl:apply-templates select="." mode="blast"/>: <xsl:apply-templates select="." mode="fa"/>  <xsl:apply-templates select="../../fasta" mode="blast"/>
+	mkdir -p $(dir $@)
+	
+	
 </xsl:if>
 </xsl:template>
+
+<xsl:template match="accessions" mode="dependencies">
+<xsl:variable name="ref" select="@ref"/>
+<xsl:variable name="L" select="/genomeHub/accessions[@id=$ref]"/>
+<xsl:for-each select="$L/acn"><xsl:apply-templates select="." mode="xml"/> </xsl:for-each>
+</xsl:template>
+
+<xsl:template match="acn" mode="xml"><xsl:value-of select="concat('${TMPDIR}/',.,'.xml ')"/></xsl:template>
+<xsl:template match="acn" mode="fa"><xsl:value-of select="concat('${TMPDIR}/',.,'.fa ')"/></xsl:template>
+<xsl:template match="acn" mode="blast"><xsl:value-of select="concat('${TMPDIR}/',.,'.',../../@id,'.blast.xml ')"/></xsl:template>
+<xsl:template match="fasta" mode="blast"><xsl:value-of select="concat('$(addsuffix .nsq,',.,') ')"/></xsl:template>
+<xsl:template match="fasta" mode="sizes"><xsl:value-of select="concat('$(dir ',.,')chrom.sizes ')"/></xsl:template>
+<xsl:template match="genome" mode="bit2">$(addsuffix .2bit,$(basename <xsl:value-of select="fasta"/>)) </xsl:template>
+<xsl:template match="genome" mode="trackDB">$(dir <xsl:value-of select="fasta"/>)trackDb.txt </xsl:template>
+<xsl:template match="genome" mode="blast"><xsl:apply-templates select="fasta" mode="blast"/></xsl:template>
+<xsl:template match="genome" mode="sizes"><xsl:apply-templates select="fasta" mode="sizes"/></xsl:template>
+<xsl:template match="group" mode="basebb"><xsl:value-of select="concat(@id,'.bb ')"/></xsl:template>
+<xsl:template match="group" mode="bb">$(dir <xsl:value-of select="../fasta"/>)<xsl:apply-templates select="." mode="basebb"/> </xsl:template>
+<xsl:template match="group" mode="bed">$(dir <xsl:value-of select="../fasta"/>)<xsl:value-of select="@id"/>.bed </xsl:template>
 
 
 </xsl:stylesheet>
