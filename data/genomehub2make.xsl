@@ -54,12 +54,13 @@ genomes.txt: <xsl:for-each select="genome"><xsl:value-of select="@id"/></xsl:for
 	<xsl:for-each select="genome">echo "genome	<xsl:value-of select="@id"/>" &gt;&gt; $@ ;
 	echo "trackDb	$(dir <xsl:value-of select="fasta"/>)trackDb.txt" &gt;&gt; $@ ;
 	echo "twoBitPath	$(addsuffix .2bit,$(basename <xsl:value-of select="fasta"/>))" &gt;&gt; $@ ;
-	<xsl:if test="email">echo "email <xsl:value-of select="email"/>" &gt;&gt; $@ ;</xsl:if>
-	<xsl:if test="description">echo "description <xsl:value-of select="description"/>" &gt;&gt; $@ ;</xsl:if>
-	<xsl:if test="defaultPos">echo "defaultPos <xsl:value-of select="defaultPos"/>" &gt;&gt; $@ ;</xsl:if>
-	<xsl:if test="orderKey">echo "defaultPos <xsl:value-of select="orderKey"/>" &gt;&gt; $@ ;</xsl:if>
+	<xsl:if test="email">echo "email	<xsl:value-of select="email"/>" &gt;&gt; $@ ;</xsl:if>
+	<xsl:if test="organism">echo "organism	<xsl:value-of select="organism"/>" &gt;&gt; $@ ;</xsl:if>
+	<xsl:if test="description">echo "description	<xsl:value-of select="description"/>" &gt;&gt; $@ ;</xsl:if>
+	<xsl:if test="defaultPos">echo "defaultPos	<xsl:value-of select="defaultPos"/>" &gt;&gt; $@ ;</xsl:if>
+	<xsl:if test="orderKey">echo "orderKey	<xsl:value-of select="orderKey"/>" &gt;&gt; $@ ;</xsl:if>
 	<xsl:if test="scientificName">echo "scientificName <xsl:value-of select="scientificName"/>" &gt;&gt; $@ ;</xsl:if>
-	<xsl:if test="html">echo "htmlPath $(dir <xsl:value-of select="fasta"/>)description.html" &gt;&gt; $@ ;</xsl:if>		
+	echo "htmlPath	<xsl:apply-templates select="." mode="html"/>" &gt;&gt; $@ ;
 	echo "" &gt;&gt; $@ ;
 	</xsl:for-each>
 
@@ -78,11 +79,15 @@ clean:
 
 ###############################################################################
 
-<xsl:value-of select="@id"/>: <xsl:apply-templates select="." mode="bit2"/> <xsl:apply-templates select="." mode="trackDB"/> 
+<xsl:value-of select="@id"/>: <xsl:apply-templates select="." mode="bit2"/> <xsl:apply-templates select="." mode="trackDB"/>  <xsl:apply-templates select="." mode="html"/>
 	
 <xsl:text>
 </xsl:text>
 
+
+<xsl:apply-templates select="." mode="html"/> :  
+	mkdir -p $(dir $@)
+	echo "&lt;html&gt;&lt;body&gt;TODO: documentation&lt;/body&lt;&gt;/html&gt;" &gt; $@
 
 <xsl:apply-templates select="." mode="bit2"/> :  <xsl:value-of select="fasta"/>
 	mkdir -p $(dir $@)
@@ -204,6 +209,7 @@ clean:
 <xsl:template match="fasta" mode="sizes"><xsl:value-of select="concat('$(dir ',.,')chrom.sizes ')"/></xsl:template>
 <xsl:template match="genome" mode="bit2">$(addsuffix .2bit,$(basename <xsl:value-of select="fasta"/>)) </xsl:template>
 <xsl:template match="genome" mode="trackDB">$(dir <xsl:value-of select="fasta"/>)trackDb.txt </xsl:template>
+<xsl:template match="genome" mode="html">$(dir <xsl:value-of select="fasta"/>)description.html </xsl:template>
 <xsl:template match="genome" mode="blast"><xsl:apply-templates select="fasta" mode="blast"/></xsl:template>
 <xsl:template match="genome" mode="sizes"><xsl:apply-templates select="fasta" mode="sizes"/></xsl:template>
 <xsl:template match="group" mode="basebb"><xsl:value-of select="concat(@id,'.bb ')"/></xsl:template>

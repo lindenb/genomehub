@@ -267,6 +267,8 @@
     <organism>Rotavirus</organism>
     <defaultPos>RF01:1-10</defaultPos>
     <scientificName>Rotavirus</scientificName>
+    <organism>Rotavirus</organism>
+    <orderKey>10970</orderKey>
     <fasta>rotavirus/rf/rf.fa</fasta>
     <protein dna="token" type="ncbi">token</protein>
 	<group id="active_site"><accessions ref="set1"/><include>active site</include></group>

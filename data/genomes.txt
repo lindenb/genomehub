@@ -1,7 +1,10 @@
 genome	rf11
 trackDb	rotavirus/rf/trackDb.txt
 twoBitPath	rotavirus/rf/rf.2bit
-description Rotavirus RF11
-defaultPos RF01:1-10
+organism	Rotavirus
+description	Rotavirus RF11
+defaultPos	RF01:1-10
+orderKey	10970
 scientificName Rotavirus
+htmlPath	rotavirus/rf/description.html 
 
